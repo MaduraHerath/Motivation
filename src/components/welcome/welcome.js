@@ -2,9 +2,8 @@ import React from 'react';
 import {Dimensions, Platform, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import LottieView from 'lottie-react-native';
 import InsButton from "../../common/InsButton";
-import {DrawerNavigator} from 'react-navigation';
 
-export default class Home extends React.Component {
+export default class Welcome extends React.Component {
     componentDidMount() {
     }
 
@@ -18,6 +17,14 @@ export default class Home extends React.Component {
                     </Text>
                 </View>
                 <View style={{flex: 1}}>
+                    <LottieView
+                        source={require('../../source/animation.json')}
+                        autoPlay
+                        loop
+                    />
+                </View>
+                <View style={styles.button}>
+                    <InsButton btnColor={"#b71c1c"} color={"#FAFAFA"} onNavigate ='Home' {...this.props}>Next</InsButton>
                 </View>
             </View>
 
@@ -45,4 +52,3 @@ const styles = StyleSheet.create({
         margin: 20
     },
 });
-
